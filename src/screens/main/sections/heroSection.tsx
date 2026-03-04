@@ -21,7 +21,7 @@ const HeroSection: React.FC = () => {
           <p className="text-lg max-w-xl text-center md:text-start">{t('hero_description')} </p>
           <div className="flex justify-center md:justify-start gap-10 md:gap-5 mt-5 w-full">
             <Link
-              href={'https://github.com/Dhalguin'}
+              href={'https://github.com/dhalguin'}
               target="_blank"
               className="border border-primary-400 rounded-lg p-3 hover:bg-accent"
             >
