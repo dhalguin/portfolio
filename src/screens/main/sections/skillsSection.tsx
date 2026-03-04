@@ -3,6 +3,7 @@
 import { SkillsandTechnologies } from '@/constants/skills'
 import { useLenguage } from '@/contexts/lenguageContext'
 import { renderIcon } from '@/helpers/renderIcon'
+import Slider from 'react-infinite-logo-slider'
 
 const SkillSection: React.FC = () => {
   const { t } = useLenguage()
@@ -15,16 +16,17 @@ const SkillSection: React.FC = () => {
             {t('skills_title')}
           </h2>
           <p className="text-lg text-center md:text-start">{t('skills_description')}</p>
-          <div className="mt-10 w-full grid grid-cols-2 md:grid-cols-4 gap-4">
-            {SkillsandTechnologies.map(skill => (
-              <div
-                key={skill.id}
-                className="h-16 bg-primary-600 rounded-4xl flex flex-col gap-1 items-center justify-center "
-              >
-                <i>{renderIcon(skill.icon)}</i>
-                <span className="text-white">{skill.label}</span>
-              </div>
-            ))}
+          <div className="mt-10 w-full">
+            <Slider duration={20}>
+              {SkillsandTechnologies.map(skill => (
+                <Slider.Slide key={skill.id}>
+                  <div className="min-w-48 h-16 bg-primary-600 rounded-4xl flex gap-4 items-center justify-center px-4">
+                    <i>{renderIcon(skill.icon)}</i>
+                    <span className="text-white">{skill.label}</span>
+                  </div>
+                </Slider.Slide>
+              ))}
+            </Slider>
           </div>
         </div>
       </div>
