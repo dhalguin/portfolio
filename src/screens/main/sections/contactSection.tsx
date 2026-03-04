@@ -28,8 +28,8 @@ const ContactSection: React.FC = () => {
   const onSubmit = async (data: ContactForm) => {
     const response = await sendEmail(data.name, data.email, data.message)
     if (typeof response !== 'string') {
-      toast.success('Mail sent correctly to Dhalgüin Hernández')
-      reset({ name: '', email: '', message: '' })
+      toast.success('Su correo me ha llegado correctamente! Pronto me pondré en contacto.')
+      reset()
     } else {
       toast.error(response)
     }
