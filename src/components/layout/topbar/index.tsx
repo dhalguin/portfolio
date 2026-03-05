@@ -1,12 +1,12 @@
 'use client'
 
 import Link from 'next/link'
-import { CloseIcon, CodeIcon, MenuIcon } from '../../../../packages/icons'
-import { LenguageOptions, topbarOptions } from './constants'
-import { renderFlagIcon } from '@/helpers/renderIcon'
-import { LenguageEnum } from '@/constants/translate'
 import { useState } from 'react'
 import { useLenguage } from '@/contexts/lenguageContext'
+import { renderFlagIcon } from '@/helpers/renderIcon'
+import { Lenguages } from '@/constants/translation'
+import { CloseIcon, CodeIcon, MenuIcon } from '../../../../packages/icons'
+import { LenguageOptions, topbarOptions } from './constants'
 
 const Topbar: React.FC = () => {
   const [lenguagesDisplayed, setLenguagesDisplayed] = useState<boolean>(false)
@@ -18,7 +18,7 @@ const Topbar: React.FC = () => {
 
   const onMenuCollpased = () => setMobileMenuCollapsed(prevState => !prevState)
 
-  const onChangeLenguage = (newLenguage: LenguageEnum) => {
+  const onChangeLenguage = (newLenguage: Lenguages) => {
     setLenguage(newLenguage)
     onDisplayLenguages()
   }
@@ -52,7 +52,7 @@ const Topbar: React.FC = () => {
               onClick={() => onDisplayLenguages()}
             >
               <div className="flex items-center gap-4">
-                <i>{renderFlagIcon(LenguageEnum[lenguage === 'en' ? 'en' : 'es'])}</i>
+                <i>{renderFlagIcon(Lenguages[lenguage === 'en' ? 'en' : 'es'])}</i>
                 <span className="text-white">EN</span>
               </div>
             </div>
@@ -69,7 +69,7 @@ const Topbar: React.FC = () => {
                     className="flex items-center gap-4 cursor-pointer rounded-lg py-1 px-2 hover:bg-accent"
                     onClick={() => onChangeLenguage(option.type)}
                   >
-                    <i>{renderFlagIcon(LenguageEnum[option.flag])}</i>
+                    <i>{renderFlagIcon(Lenguages[option.flag])}</i>
                     <span className="text-white">{option.label}</span>
                   </div>
                 ))}
@@ -96,7 +96,7 @@ const Topbar: React.FC = () => {
               onClick={() => onDisplayLenguages()}
             >
               <div className="flex items-center gap-4">
-                <i>{renderFlagIcon(LenguageEnum[lenguage === 'en' ? 'en' : 'es'])}</i>
+                <i>{renderFlagIcon(Lenguages[lenguage === 'en' ? 'en' : 'es'])}</i>
                 <span className="text-white">EN</span>
               </div>
             </div>
@@ -113,7 +113,7 @@ const Topbar: React.FC = () => {
                     className="flex items-center gap-4 cursor-pointer rounded-lg py-1 px-2 hover:bg-accent"
                     onClick={() => onChangeLenguage(option.type)}
                   >
-                    <i>{renderFlagIcon(LenguageEnum[option.flag])}</i>
+                    <i>{renderFlagIcon(Lenguages[option.flag])}</i>
                     <span className="text-white">{option.label}</span>
                   </div>
                 ))}

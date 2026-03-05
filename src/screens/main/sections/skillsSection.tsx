@@ -13,9 +13,9 @@ const SkillSection: React.FC = () => {
       <div className="flex w-full">
         <div className="flex flex-col items-center gap-5 w-full">
           <h2 className="text-white font-bold text-4xl md:text-5xl lg:text-6xl">
-            {t('skills_title')}
+            {t('SkillsSection', 'title')}
           </h2>
-          <p className="text-lg text-center md:text-start">{t('skills_description')}</p>
+          <p className="text-lg text-center md:text-start">{t('SkillsSection', 'description')}</p>
           <div className="mt-10 w-full">
             <Slider duration={20}>
               {SkillsandTechnologies.map(skill => (

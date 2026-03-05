@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="py-6 text-center">
-      <span className="text-sm">{t('footer')}</span>
+      <span className="text-sm">{t('Footer', 'legend')}</span>
     </footer>
   )
 }

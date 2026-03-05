@@ -1,6 +1,6 @@
 'use client'
 
-import { TranslationKey } from '@/contexts/lenguageContext/type'
+import { TranslationKey, TranslationSection } from '@/contexts/lenguageContext/type'
 
 export type WorkExperienceType = {
   id: number
@@ -12,74 +12,73 @@ export type WorkExperienceType = {
   imageUrl: string
 }
 
-export const workExperience = (t: (key: TranslationKey) => string | string[]) => {
+export const workExperience = (
+  t: <S extends TranslationSection>(section: S, key: TranslationKey<S>) => string
+) => {
   const data: WorkExperienceType[] = [
     {
       id: 0,
-      role: t('experience_vero_title') as string,
+      role: t('VeroExperience', 'title') as string,
       company: 'Vero',
-      startDate: 'Nov 2025',
-      endDate: 'Presente',
+      startDate: t('VeroExperience', 'start_date'),
+      endDate: t('VeroExperience', 'end_date'),
       keyPoints: [
-        t('experience_vero_description')[0],
-        t('experience_vero_description')[1],
-        t('experience_vero_description')[2],
-        t('experience_vero_description')[3],
+        t('VeroExperience', 'key_point_1'),
+        t('VeroExperience', 'key_point_2'),
+        t('VeroExperience', 'key_point_3'),
+        t('VeroExperience', 'key_point_4'),
       ],
       imageUrl: '',
     },
     {
       id: 1,
-      role: t('experience_booknow_title') as string,
+      role: t('BooknowExperience', 'title') as string,
       company: 'Booknow',
-      startDate: 'Sep 2025',
-      endDate: 'Jan 2026',
+      startDate: t('BooknowExperience', 'start_date'),
+      endDate: t('BooknowExperience', 'end_date'),
       keyPoints: [
-        t('experience_booknow_description')[0],
-        t('experience_booknow_description')[1],
-        t('experience_booknow_description')[2],
-        t('experience_booknow_description')[3],
+        t('BooknowExperience', 'key_point_1'),
+        t('BooknowExperience', 'key_point_2'),
+        t('BooknowExperience', 'key_point_3'),
+        t('BooknowExperience', 'key_point_4'),
       ],
       imageUrl: '',
     },
     {
       id: 2,
-      role: t('experience_rentaweb_title') as string,
+      role: t('RentawebExperience', 'title') as string,
       company: 'Rentaweb',
-      startDate: 'May 2023',
-      endDate: 'Jul 2025',
+      startDate: t('RentawebExperience', 'start_date'),
+      endDate: t('RentawebExperience', 'end_date'),
       keyPoints: [
-        t('experience_rentaweb_description')[0],
-        t('experience_rentaweb_description')[1],
-        t('experience_rentaweb_description')[2],
-        t('experience_rentaweb_description')[3],
-        t('experience_rentaweb_description')[4],
+        t('RentawebExperience', 'key_point_1'),
+        t('RentawebExperience', 'key_point_2'),
+        t('RentawebExperience', 'key_point_3'),
+        t('RentawebExperience', 'key_point_4'),
+        t('RentawebExperience', 'key_point_5'),
       ],
       imageUrl: '',
     },
     {
       id: 3,
-      role: t('experience_drimo_title') as string,
+      role: t('DrimoExperience', 'title') as string,
       company: 'Drimo',
-      startDate: 'Apr 2022',
-      endDate: 'Mar 2023',
+      startDate: t('DrimoExperience', 'start_date'),
+      endDate: t('DrimoExperience', 'end_date'),
       keyPoints: [
-        t('experience_drimo_description')[0],
-        t('experience_drimo_description')[1],
-        t('experience_drimo_description')[2],
+        t('DrimoExperience', 'key_point_1'),
+        t('DrimoExperience', 'key_point_2'),
+        t('DrimoExperience', 'key_point_3'),
       ],
       imageUrl: '',
     },
     {
       id: 4,
-      role: t('experience_freelance_title') as string,
+      role: t('FreelanceExperience', 'title') as string,
       company: 'Freelance',
-      startDate: 'Sep 2021',
-      endDate: 'Dec 2021',
-      keyPoints: [
-        t('experience_freelance_description')[0],
-        t('experience_freelance_description')[1],
-      ],
+      startDate: t('FreelanceExperience', 'start_date'),
+      endDate: t('FreelanceExperience', 'end_date'),
+      keyPoints: [t('FreelanceExperience', 'key_point_1'), t('FreelanceExperience', 'key_point_2')],
       imageUrl: '',
     },
   ]

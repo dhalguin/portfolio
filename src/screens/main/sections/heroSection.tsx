@@ -17,8 +17,10 @@ const HeroSection: React.FC = () => {
         </div>
         <div className="flex flex-col items-center md:items-start gap-5">
           <h1 className="text-white font-bold text-5xl lg:text-7xl">Dhalgüin Hernández</h1>
-          <h3 className="text-secondary text-2xl md:text-4xl">{t('hero_subtitle')}</h3>
-          <p className="text-lg max-w-xl text-center md:text-start">{t('hero_description')} </p>
+          <h3 className="text-secondary text-2xl md:text-4xl">{t('HeroSection', 'title')}</h3>
+          <p className="text-lg max-w-xl text-center md:text-start">
+            {t('HeroSection', 'description')}
+          </p>
           <div className="flex justify-center md:justify-start gap-10 md:gap-5 mt-5 w-full">
             <Link
               href={'https://github.com/dhalguin'}

@@ -1,6 +1,6 @@
 import { TechnologiesEnum } from '@/constants/skills'
 import { FlagIcon, TechnologyIcon } from '../../packages/icons'
-import { LenguageEnum } from '@/constants/translate'
+import { Lenguages } from '@/constants/translation'
 
 export const renderIcon = (value: TechnologiesEnum) => {
   switch (value) {
@@ -36,7 +36,7 @@ export const renderIcon = (value: TechnologiesEnum) => {
   }
 }
 
-export const renderFlagIcon = (value: LenguageEnum) => {
+export const renderFlagIcon = (value: Lenguages) => {
   switch (value) {
     case 'es':
       return <FlagIcon.SpainFlagIcon width="32" height="32" />

@@ -12,9 +12,11 @@ const ExperienceSection: React.FC = () => {
       <div className="flex flex-col w-full">
         <div className="flex flex-col items-center gap-5 w-full">
           <h2 className="text-white font-bold text-4xl md:text-5xl lg:text-6xl">
-            {t('experience_title')}
+            {t('ExperienceSection', 'title')}
           </h2>
-          <p className="text-lg text-center md:text-start">{t('experience_description')}</p>
+          <p className="text-lg text-center md:text-start">
+            {t('ExperienceSection', 'description')}
+          </p>
         </div>
         <div className="mt-10 relative">
           <div className="absolute left-1/2 top-0 h-full w-px bg-primary-600 hidden lg:block"></div>

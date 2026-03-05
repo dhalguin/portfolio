@@ -1,20 +1,34 @@
 'use client'
 
 import { createContext, useContext, useEffect, useMemo, useState } from 'react'
-import { Lenguage, LenguageContextType, LenguageProviderType, TranslationKey } from './type'
+import {
+  Lenguage,
+  LenguageContextType,
+  LenguageProviderType,
+  TranslationKey,
+  TranslationSection,
+} from './type'
 import { translations } from '@/lib/translations'
 
-const LenguageContext = createContext<LenguageContextType | undefined>(undefined)
+const initialLenguage: LenguageContextType = {
+  lenguage: 'es',
+  setLenguage: ({}) => {},
+  t: () => '',
+}
+
+const LenguageContext = createContext<LenguageContextType>(initialLenguage)
 
 export const LenguageProvider: React.FC<LenguageProviderType> = ({ children }) => {
-  const [lenguage, setLenguage] = useState<Lenguage>('es')
+  const [lenguage, setLenguage] = useState<Lenguage>(initialLenguage.lenguage)
 
   const t = useMemo(
     () =>
-      (key: TranslationKey): string | string[] => {
-        const text = translations[lenguage][key] || translations['es'][key]
+      <S extends TranslationSection>(section: S, key: TranslationKey<S>): string => {
+        const sectionTranslations = translations[lenguage][section]
+        const fallbackSection = translations['es'][section]
+        const text = sectionTranslations?.[key] || fallbackSection?.[key] || String(key)
 
-        return text
+        return String(text)
       },
     [lenguage]
   )
