@@ -86,7 +86,7 @@ const Topbar: React.FC = () => {
             <CodeIcon width="32" height="32" fill="#4052b6" />
           </i>
           <Link href={'/#hero'}>
-            <h3 className="text-2xl">DHFolio</h3>
+            <h3 className="text-2xl">DHZ</h3>
           </Link>
         </div>
         <div className="flex items-center gap-2">
